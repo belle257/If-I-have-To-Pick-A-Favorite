@@ -1,0 +1,249 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #343a35;
+    background-color: #faf8f3;
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Navigation */
+header {
+    background-color: #fff;
+    padding: 18px 8%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    color: #984a3c;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a:not(.logo) {
+    color: #444;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #b65c45;
+}
+
+/* Main banner */
+.hero {
+    min-height: 600px;
+    padding: 60px 20px;
+    background:
+        linear-gradient(rgba(20, 29, 25, 0.38), rgba(20, 29, 25, 0.38)),
+        url("https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=2000&q=90");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    margin: 10px 0;
+    font-size: clamp(3.2rem, 8vw, 5.5rem);
+    line-height: 1.1;
+}
+
+.hero-content > p:not(.eyebrow) {
+    font-size: 19px;
+}
+
+.eyebrow {
+    color: #b36a54;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.hero .eyebrow {
+    color: #fff1df;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 28px;
+    border-radius: 4px;
+    background-color: #a84f3d;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.button:hover {
+    background-color: #803b30;
+}
+
+/* About section */
+.section {
+    padding: 85px 9%;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    gap: 55px;
+}
+
+.about-image,
+.about-text {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    height: 410px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.about-text h2,
+.section-heading h2,
+.memories h2 {
+    margin: 10px 0 20px;
+    color: #984a3c;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    line-height: 1.2;
+}
+
+.about-text p:not(.eyebrow) {
+    margin-bottom: 18px;
+}
+
+/* Culture cards */
+.culture {
+    background-color: #f0ebe2;
+}
+
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.culture-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.culture-card {
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 5px 18px rgba(45, 40, 30, 0.07);
+}
+
+.culture-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.card-copy {
+    padding: 22px;
+}
+
+.culture-card h3 {
+    margin-bottom: 10px;
+    color: #984a3c;
+    font-size: 21px;
+}
+
+/* Personal reflection section */
+.memories {
+    max-width: 1050px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.memories p:not(.eyebrow) {
+    margin: 0 auto 18px;
+    max-width: 780px;
+}
+
+.memories h3 {
+    margin-top: 32px;
+    color: #a84f3d;
+    font-size: 23px;
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    padding: 25px;
+    background-color: #344b3b;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Responsive layout for phones and tablets */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    .hero {
+        min-height: 450px;
+    }
+
+    .about {
+        flex-direction: column;
+        padding: 55px 8%;
+    }
+
+    .about-image img {
+        height: 300px;
+    }
+
+    .culture-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 60px 8%;
+    }
+}
